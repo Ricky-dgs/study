@@ -1,0 +1,29 @@
+<div style='text-align: center'>
+    <h1>显示全部学生</h1>
+ <%= link_to '添加学生', new_student_path %>
+
+<table>
+  <tr>
+    <th>学生ID</th>
+    <th>姓名</th>
+    <th>年龄</th>
+    <th>班级</th>
+    <th colspan="3"></th>
+  </tr>
+ 
+<% @students.each do |student| %>
+  <tr>
+    <td><%= student.id %></td>
+    <td><%= student.name %></td>
+    <td><%= student.age %></td>
+    <td><%= student.grade.try(:name)   %></td>
+    <td><%= link_to '显示', student_path(student) %></td>
+    <td><%= link_to '修改', edit_student_path(student) %></td>
+    <td><%= link_to '删除', student_path(student),
+                    method: :delete, data: { confirm: '确定删除?' } %></td>
+  </tr>
+<% end %>
+</table>
+<%= link_to '返回管理页面', manager_index_path %>
+
+</div>

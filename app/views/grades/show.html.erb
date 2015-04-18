@@ -1,0 +1,14 @@
+<div style='text-align: center'>
+	<p>
+	  <strong>班级ID:</strong>
+	  <%= @grade.id %>
+	</p>
+ 
+	<p>
+	  <strong>班级名:</strong>
+	  <%= @grade.name %>
+	</p>
+	<%= link_to '返回', grades_path %>
+|   <%= link_to '修改', edit_grade_path(@grade) %>
+
+</div>

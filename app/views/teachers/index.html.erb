@@ -1,0 +1,27 @@
+<div style='text-align: center'>
+    <h1>显示全部老师</h1>
+ <%= link_to '添加老师', new_teacher_path %>
+
+<table>
+  <tr>
+    <th>老师ID</th>
+    <th>姓名</th>
+    <th colspan="3"></th>
+  </tr>
+ 
+<% @teachers.each do |teacher| %>
+  <tr>
+    <td><%= teacher.id %></td>
+    <td><%= teacher.name %></td>
+    <td><%= link_to '显示', teacher_path(teacher) %></td>
+    <td><%= link_to '修改', edit_teacher_path(teacher) %></td>
+    <td><%= link_to '分配班级', new_teacher_appointment_path(teacher) %></td>
+    <td><%= link_to '查看分配的班级', che_gre_teacher_path(teacher) %></td>
+    <td><%= link_to '删除', teacher_path(teacher),
+                    method: :delete, data: { confirm: '确定删除?' } %></td>
+  </tr>
+<% end %>
+</table>
+<%= link_to '返回管理页面', manager_index_path %>
+
+</div>

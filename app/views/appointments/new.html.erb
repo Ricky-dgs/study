@@ -1,0 +1,57 @@
+<%= form_tag(teacher_appointments_path, method: "post") do%>
+
+  <div style='text-align: center'>
+  	<d1>分配班级</h1>
+  	<p>
+  	  
+  	</p>
+  <table>
+  	<tr>
+      <td><strong>老师ID:</strong></d>
+  	  <td><%= @teacher.id %></td>
+    </tr>
+    <tr>
+      <td><strong>老师姓名:</strong></d>
+  	  <td><%= @teacher.name %></td>
+    </tr>
+   <tr>
+   	<td>
+   		<strong>班级:</strong>
+   	</td>
+   	<td>	
+   <% @grades.each do |grade| %>
+   <%= check_box_tag("ids[]",grade.id) %><%=grade.name%>
+
+   <% end %>
+    	</td>
+    </tr>
+
+
+  </table>
+
+  <p>
+    <%= submit_tag("提交") %>
+  </p>
+  </<div> 
+<% end %>
+
+<%= link_to '返回', teachers_path %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,18 @@
+<div style='text-align: center'>
+    <h1>查看分配班级</h1>
+		<table>
+		    <tr>
+		      	<td><strong>老师姓名:</strong></d>
+		  	  	<td><%= @teacher.name %></td>
+	        </tr>
+		 
+		<% @grades.each do |grade| %>
+		  	<tr>
+		  		<td><strong>班级姓名:</strong></d>
+		    	<td><%= grade.name %></td>
+		  	</tr>
+		<% end %>
+		</table>
+<%= link_to '返回管理页面', manager_index_path %>
+
+</div>

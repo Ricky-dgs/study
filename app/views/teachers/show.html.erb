@@ -1,0 +1,15 @@
+<div style='text-align: center'>
+	<p>
+	  <strong>老师ID:</strong>
+	  <%= @teacher.id %>
+	</p>
+ 
+	<p>
+	  <strong>姓名:</strong>
+	  <%= @teacher.name %>
+	</p>
+
+	<%= link_to '返回', teachers_path %>
+|   <%= link_to '修改', edit_teacher_path(@teacher) %>
+
+</div>
